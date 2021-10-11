@@ -2,50 +2,27 @@ package com.jbaldeo_tevthatcher.laptoporderingapplication;
 
 import java.util.ArrayList;
 
-public class WorkLaptop {
-    private String processor;
-    private String ram;
-    private String storage;
-    private String os;
-    private ArrayList<String> features;
-    private Boolean warranty;
-    private Boolean wirelessMouse;
+public class WorkLaptop extends Laptop{
+    private Boolean touchScreen;
+    private Boolean fingerprintScanner;
 
     public WorkLaptop() {
-        processor = "intel i5 8300H Quad Core Processor";
-        storage = "512GB SSD";
-        os = "Windows 11 Pro";
+        super("intel i5 8300H Quad Core Processor", "512GB SSD", "Windows 11 Pro");
     }
 
-    public String getRam() {
-        return ram;
+    public Boolean getTouchScreen() {
+        return touchScreen;
     }
 
-    public void setRam(String ram) {
-        this.ram = ram;
+    public void setTouchScreen(Boolean touchScreen) {
+        this.touchScreen = touchScreen;
     }
 
-    public ArrayList<String> getFeatures() {
-        return features;
+    public Boolean getFingerprintScanner() {
+        return fingerprintScanner;
     }
 
-    public void setFeatures(ArrayList<String> features) {
-        this.features = features;
-    }
-
-    public Boolean getWarranty() {
-        return warranty;
-    }
-
-    public void setWarranty(Boolean warranty) {
-        this.warranty = warranty;
-    }
-
-    public Boolean getWirelessMouse() {
-        return wirelessMouse;
-    }
-
-    public void setWirelessMouse(Boolean wirelessMouse) {
-        this.wirelessMouse = wirelessMouse;
+    public void setFingerprintScanner(Boolean fingerprintScanner) {
+        this.fingerprintScanner = fingerprintScanner;
     }
 }

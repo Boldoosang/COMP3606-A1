@@ -10,12 +10,15 @@ import android.widget.RadioButton;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
+    Laptop schoolLaptop;
+    Laptop workLaptop;
+    Laptop gamingLaptop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        schoolLaptop = new SchoolLaptop();
         slMouseSwitchListener();
         slWarrantySwitchListener();
         }
@@ -37,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         boolean checked = webcam.isChecked();
 
         if(checked)
-            System.out.println("webcam");
+            schoolLaptop.setWebcam(true);
+        else
+            schoolLaptop.setWebcam(false);
     }
 
     public void slRamClicked(View view) {
@@ -47,11 +52,12 @@ public class MainActivity extends AppCompatActivity {
         switch(view.getId()){
             case R.id.school6GBRAM:
                 if(checked)
-                    System.out.println("6GB RAM");
+                    schoolLaptop.setRam("6GB RAM");
+                    System.out.println(schoolLaptop.toString());
                 break;
             case R.id.school8GBRAM:
                 if(checked)
-                    System.out.println("8GB RAM");
+                    schoolLaptop.setRam("8GB RAM");
         }
     }
 
@@ -61,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // The toggle is enabled
-                    System.out.println("Warranty selected");
+                    schoolLaptop.setWarranty(true);
                 } else {
                     // The toggle is disabled
-                    System.out.println("Warranty not selected");
+                    schoolLaptop.setWarranty(false);
                 }
             }
         });
@@ -75,13 +81,15 @@ public class MainActivity extends AppCompatActivity {
         mouseSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    // The toggle is enabled
-                    System.out.println("Mouse selected");
+                    schoolLaptop.setWirelessMouse(true);
                 } else {
-                    // The toggle is disabled
-                    System.out.println("Mouse not selected");
+                    schoolLaptop.setWirelessMouse(false);
                 }
             }
         });
+    }
+
+    public void addSchoolLaptopCart(View view){
+
     }
 }
