@@ -88,15 +88,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-
-                            android:text="@string/schoolLaptop_TouchScreen" />
+                            android:text="@string/schoolLaptop_TouchScreen"
+                            android:onClick="slTouchScreenCheckbox"
+                            />
 
                         <CheckBox
                             android:id="@+id/schoolLaptop_WebcamCheckbox"
                             android:layout_width="wrap_content"
                             android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:text="@string/schoolLaptop_Webcam" />
+                            android:text="@string/schoolLaptop_Webcam"
+                            android:onClick="slWebcamCheckbox"/>
 
                         <TextView
                             android:id="@+id/schoolRAMOptions"
@@ -115,13 +117,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="true"
+                                android:onClick="slRamClicked"
                                 android:text="6 GB RAM" />
 
                             <RadioButton
                                 android:id="@+id/school8GBRAM"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="8 GB RAM" />
+                                android:text="8 GB RAM"
+                                android:onClick="slRamClicked" />
 
                         </RadioGroup>
 
