@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Laptop Specialists Ordering Application</string>
+    <string name="addPrompt">Please select and customize laptops to add to cart:</string>
+    <string name="customizationOptionsText">Please customize your chosen laptop:</string>
+
+    <string name="schoolLaptopTitle">School Laptop</string>
+    <string name="workLaptopTitle">Work Laptop</string>
+    <string name="gamingLaptopTitle">Gaming Laptop</string>
+
+    <string name="schoolLaptop_TouchScreen">Touchscreen</string>
+
+    <string name="schoolLaptopSpecsText">Intel i3 8100H Quad Core Processor, 8GB DDR4 RAM</string>
+    <string name="workLaptopSpecsText">Intel i5 8300H Quad Core Processor, 12GB DDR4 RAM</string>
+    <string name="gamingLaptopSpecsText">Intel i7 8750H Hexacore Processor, 16GB DDR4 RAM</string>
+
 </resources>
