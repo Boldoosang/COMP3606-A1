@@ -15,7 +15,7 @@
         app:srcCompat="@drawable/background" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
@@ -39,84 +39,374 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/schoolLaptopTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/schoolLaptopTitle"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:id="@+id/customizationOptionsText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/customizationOptionsText"
-                    android:textSize="16dp" />
-
-                <CheckBox
-                    android:id="@+id/schoolLaptop_TouchScreenCheckbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:text="@string/schoolLaptop_TouchScreen" />
-
-                <TextView
-                    android:id="@+id/schoolRAMOptions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="RAM Configuration"
-                    android:textSize="16sp" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp">
-
-                    <RadioButton
-                        android:id="@+id/school6GBRAM"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="6 GB RAM" />
-
-                    <RadioButton
-                        android:id="@+id/school8GBRA"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="8 GB RAM" />
-
-                </RadioGroup>
-
-                <TextView
-                    android:id="@+id/schoolWarrantyOptions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Additional Options"
-                    android:textSize="16sp" />
-
-                <Switch
-                    android:id="@+id/schoolLaptop_extWarranty"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="16dp"
-                    android:text="Extended Warranty" />
+                    android:layout_height="match_parent">
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="250dp"
-                    android:layout_height="70dp"
-                    android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/addtocart" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/schoolLaptopTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/schoolLaptopTitle"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/schoolLaptopSpecsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/schoolLaptopSpecsTitle"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/schoolLaptopSpecs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/schoolLaptopSpecsText"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/schoolCustomizationOptionsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/customizationOptionsText"
+                            android:textSize="16dp" />
+
+                        <CheckBox
+                            android:id="@+id/schoolLaptop_TouchScreenCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:text="@string/schoolLaptop_TouchScreen" />
+
+                        <CheckBox
+                            android:id="@+id/schoolLaptop_WebcamCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="@string/schoolLaptop_Webcam" />
+
+                        <TextView
+                            android:id="@+id/schoolRAMOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RAM Configuration"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp">
+
+                            <RadioButton
+                                android:id="@+id/school6GBRAM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="6 GB RAM" />
+
+                            <RadioButton
+                                android:id="@+id/school8GBRAM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="8 GB RAM" />
+
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/schoolAdditionalOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Additional Options"
+                            android:textSize="16sp" />
+
+                        <Switch
+                            android:id="@+id/schoolLaptop_extWarranty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Extended Warranty" />
+
+                        <Switch
+                            android:id="@+id/schoolLaptop_mouse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wireless Mouse" />
+
+                        <ImageButton
+                            android:id="@+id/schoolAddToCart"
+                            android:layout_width="250dp"
+                            android:layout_height="70dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="16dp"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/addtocart" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/workLaptopTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/workLaptopTitle"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/workLaptopSpecsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/workLaptopSpecsTitle"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/workLaptopSpecs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/workLaptopSpecsText"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/workCustomizationOptionsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/customizationOptionsText"
+                            android:textSize="16dp" />
+
+                        <CheckBox
+                            android:id="@+id/workLaptop_TouchScreenCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/workLaptop_TouchScreen" />
+
+                        <CheckBox
+                            android:id="@+id/workLaptop_WebcamCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/workLaptop_Webcam" />
+
+                        <CheckBox
+                            android:id="@+id/workLaptop_FPSCheckbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/workLaptop_FPS" />
+
+                        <TextView
+                            android:id="@+id/workRAMOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RAM Configuration"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp">
+
+                            <RadioButton
+                                android:id="@+id/work8GBRAM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="8 GB RAM" />
+
+                            <RadioButton
+                                android:id="@+id/work12GBRAM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="12 GB RAM" />
+
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/workAdditionalOptions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Additional Options"
+                            android:textSize="16sp" />
+
+                        <Switch
+                            android:id="@+id/workLaptop_extWarranty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Extended Warranty" />
+
+                        <Switch
+                            android:id="@+id/workLaptop_mouse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wireless Mouse" />
+
+                        <ImageButton
+                            android:id="@+id/workAddToCart"
+                            android:layout_width="250dp"
+                            android:layout_height="70dp"
+                            android:layout_marginTop = "16dp"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:scaleType="fitXY"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/addtocart" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp">>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/gamingLaptopTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/gamingLaptopTitle"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/workLaptopSpecsTitle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/gamingLaptopSpecsTitle"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/gamingLaptopSpecs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gamingLaptopSpecsText"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/gamingCustomizationOptionsText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/customizationOptionsText"
+                            android:textSize="16dp" />
+
+                        <CheckBox
+                            android:id="@+id/gamingLaptop_WebcamCheckbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gamingLaptop_Webcam" />
+
+                        <CheckBox
+                            android:id="@+id/gamingLaptop_4KCheckbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gamingLaptop_4K" />
+
+                        <TextView
+                            android:id="@+id/gamingRAMOptions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="RAM Configuration"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginVertical="10dp">
+
+                            <RadioButton
+                                android:id="@+id/gaming16GBRAM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="16 GB RAM" />
+
+                            <RadioButton
+                                android:id="@+id/gaming24GBRAM"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="24 GB RAM" />
+
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/gamingAdditionalOptions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Additional Options"
+                            android:textSize="16sp" />
+
+                        <Switch
+                            android:id="@+id/gamingLaptop_extWarranty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Extended Warranty" />
+
+                        <Switch
+                            android:id="@+id/gamingLaptop_mouse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wireless Mouse" />
+
+                        <Switch
+                            android:id="@+id/gamingLaptop_coolingPad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cooling Pad" />
+
+                        <ImageButton
+                            android:id="@+id/gamingAddToCart"
+                            android:layout_width="250dp"
+                            android:layout_height="70dp"
+                            android:layout_marginTop = "16dp"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:scaleType="fitXY"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/addtocart" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-        </ScrollView>
 
+        </ScrollView>
 
     </LinearLayout>
 

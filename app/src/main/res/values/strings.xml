@@ -1,16 +1,28 @@
 <resources>
     <string name="app_name">Laptop Specialists Ordering Application</string>
     <string name="addPrompt">Please select and customize laptops to add to cart:</string>
-    <string name="customizationOptionsText">Please customize your chosen laptop:</string>
+
+    <string name="schoolLaptopSpecsTitle">School Laptop Specifications:</string>
+    <string name="workLaptopSpecsTitle">Work Laptop Specifications:</string>
+    <string name="gamingLaptopSpecsTitle">Gaming Laptop Specifications:</string>
+    <string name="customizationOptionsText">Please customize your laptop:</string>
 
     <string name="schoolLaptopTitle">School Laptop</string>
     <string name="workLaptopTitle">Work Laptop</string>
     <string name="gamingLaptopTitle">Gaming Laptop</string>
 
     <string name="schoolLaptop_TouchScreen">Touchscreen</string>
+    <string name="schoolLaptop_Webcam">Webcam</string>
 
-    <string name="schoolLaptopSpecsText">Intel i3 8100H Quad Core Processor, 8GB DDR4 RAM</string>
-    <string name="workLaptopSpecsText">Intel i5 8300H Quad Core Processor, 12GB DDR4 RAM</string>
-    <string name="gamingLaptopSpecsText">Intel i7 8750H Hexacore Processor, 16GB DDR4 RAM</string>
+    <string name="workLaptop_TouchScreen">Touchscreen</string>
+    <string name="workLaptop_Webcam">Webcam</string>
+    <string name="workLaptop_FPS">Fingerprint Scanner</string>
+
+    <string name="gamingLaptop_4K">4K Display</string>
+    <string name="gamingLaptop_Webcam">Webcam</string>
+
+    <string name="schoolLaptopSpecsText">Intel i3 8100H Quad Core Processor, 8GB DDR4, 256GB SSD, Windows 11 Home</string>
+    <string name="workLaptopSpecsText">Intel i5 8300H Quad Core Processor, 12GB DDR4 RAM, 512GB SSD, Windows 11 Pro</string>
+    <string name="gamingLaptopSpecsText">Intel i7 8750H Hexacore Processor, 16GB DDR4 RAM, 1TB SSD, Windows 11 Home</string>
 
 </resources>
