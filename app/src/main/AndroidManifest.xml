@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LaptopSpecialistsOrderingApplication">
         <activity
-            android:name=".MainActivity"
+            android:name=".DisplayOrders"
+            android:exported="true" />
+        <activity
+            android:name=".CompleteOrder"
+            android:exported="true" />
+        <activity
+            android:name=".BrowseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

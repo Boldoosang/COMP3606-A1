@@ -2,6 +2,7 @@ package com.jbaldeo_tevthatcher.laptoporderingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -9,7 +10,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Switch;
 
-public class MainActivity extends AppCompatActivity {
+public class BrowseActivity extends AppCompatActivity {
     Laptop schoolLaptop;
     Laptop workLaptop;
     Laptop gamingLaptop;
@@ -17,11 +18,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_browse);
         schoolLaptop = new SchoolLaptop();
         slMouseSwitchListener();
         slWarrantySwitchListener();
-        }
+    }
+
+    public void onClickCompleteOrder(View view){
+        Intent intent = new Intent(BrowseActivity.this, CompleteOrder.class);
+        intent.putExtra(CompleteOrder.EXTRA_COMPLETE_ORDER_DETAILS, "test");
+        startActivity(intent);
+    }
 
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);

@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tevon/AndroidStudioProjects/COMP3606-A1/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/jbald/AndroidStudioProjects/LaptopSpecialistsOrderingApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/jbald/AndroidStudioProjects/LaptopSpecialistsOrderingApplication/app/src/main/res/layout/activity_complete_order.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/jbald/AndroidStudioProjects/LaptopSpecialistsOrderingApplication/app/src/main/res/layout/activity_display_orders.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/jbald/AndroidStudioProjects/LaptopSpecialistsOrderingApplication/app/src/main/res/layout/activity_main.xml" value="0.2562733582487987" />
       </map>
     </option>
   </component>
