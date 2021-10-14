@@ -48,8 +48,15 @@ public class CompleteOrder extends AppCompatActivity {
             Intent intent = new Intent().setAction(Intent.ACTION_SEND);
             intent.putExtra(Intent.EXTRA_TEXT, fullOrder);
             intent.setType("text/plain");
-            //intent.setPackage("com.whatsapp");
-            startActivity(intent);
+            try {
+                intent.setPackage("com.whatsapp");
+                startActivity(intent);
+            } catch(Exception e){
+                intent.setPackage(null);
+                Toast toast = Toast.makeText(this, "Whatsapp not found. Defaulting to messenger.", 3);
+                toast.show();
+                startActivity(intent);
+            }
         }
     }
 }
