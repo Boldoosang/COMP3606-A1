@@ -7,23 +7,25 @@
     <string name="gamingLaptopSpecsTitle">Gaming Laptop Specifications:</string>
     <string name="customizationOptionsText">Please customize your laptop:</string>
 
-    <string name="schoolLaptopTitle">School Laptop</string>
-    <string name="workLaptopTitle">Work Laptop</string>
-    <string name="gamingLaptopTitle">Gaming Laptop</string>
+    <string name="schoolLaptopTitle">School Laptop $3000.00</string>
+    <string name="workLaptopTitle">Work Laptop $5000.00</string>
+    <string name="gamingLaptopTitle">Gaming Laptop $7000.00</string>
 
-    <string name="schoolLaptop_TouchScreen">Touchscreen</string>
-    <string name="schoolLaptop_Webcam">Webcam</string>
+    <string name="schoolLaptop_TouchScreen">Touchscreen + $500.00</string>
+    <string name="schoolLaptop_Webcam">Webcam + $300.00</string>
 
-    <string name="workLaptop_TouchScreen">Touchscreen</string>
-    <string name="workLaptop_Webcam">Webcam</string>
-    <string name="workLaptop_FPS">Fingerprint Scanner</string>
+    <string name="workLaptop_TouchScreen">Touchscreen + $500.00</string>
+    <string name="workLaptop_Webcam">Webcam + $300.00</string>
+    <string name="workLaptop_FPS">Fingerprint Scanner + $300.00</string>
 
-    <string name="gamingLaptop_4K">4K Display</string>
-    <string name="gamingLaptop_Webcam">Webcam</string>
+    <string name="gamingLaptop_4K">4K Display + $700.00</string>
+    <string name="gamingLaptop_Webcam">Webcam + $300.00</string>
 
     <string name="schoolLaptopSpecsText">Intel i3 8100H Quad Core Processor, 256GB SSD, Windows 11 Home</string>
     <string name="workLaptopSpecsText">Intel i5 8300H Quad Core Processor, 512GB SSD, Windows 11 Pro</string>
     <string name="gamingLaptopSpecsText">Intel i7 8750H Hexacore Processor, 1TB SSD, Windows 11 Home</string>
 
-    <string name="reviewOrder">Please review your oder: </string>
+    <string name="currentCartTitle">ITEMS IN CART: </string>
+    <string name="reviewOrderHeader">Please review your order: </string>
+    <string name="displayOrdersHeader">Your past orders: </string>
 </resources>

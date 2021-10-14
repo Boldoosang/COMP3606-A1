@@ -1,18 +1,24 @@
 package com.jbaldeo_tevthatcher.laptoporderingapplication;
 
+import android.os.Parcelable;
+
 public abstract class Laptop {
+
     private String ram;
     private String processor;
     private String storage;
     private String os;
+    private double basePrice;
+    private double finalPrice;
     private Boolean warranty;
     private Boolean wirelessMouse;
     private Boolean webcam;
 
-    public Laptop(String processor, String storage, String os) {
+    public Laptop(String processor, String storage, String os, double basePrice) {
         this.processor = processor;
         this.storage = storage;
         this.os = os;
+        this.basePrice = basePrice;
     }
 
     public String getRam() {
@@ -59,16 +65,20 @@ public abstract class Laptop {
         return os;
     }
 
-    @Override
-    public String toString() {
-        return "Laptop{" +
-                "ram='" + ram + '\'' +
-                ", processor='" + processor + '\'' +
-                ", storage='" + storage + '\'' +
-                ", os='" + os + '\'' +
-                ", warranty=" + warranty +
-                ", wirelessMouse=" + wirelessMouse +
-                ", webcam=" + webcam +
-                '}';
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
     }
+
+    public void setFinalPrice(double finalPrice) {
+        this.finalPrice = finalPrice;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public double getFinalPrice() {
+        return finalPrice;
+    }
+
 }
