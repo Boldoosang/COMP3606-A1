@@ -2,7 +2,9 @@ package com.jbaldeo_tevthatcher.laptoporderingapplication;
 
 import android.os.Parcelable;
 
-public abstract class Laptop {
+import java.io.Serializable;
+
+public abstract class Laptop implements Serializable{
 
     private String ram;
     private String processor;
