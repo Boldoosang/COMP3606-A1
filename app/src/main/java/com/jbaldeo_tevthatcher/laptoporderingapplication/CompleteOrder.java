@@ -77,15 +77,17 @@ public class CompleteOrder extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Unable to send order. Cart is empty.", 3);
             toast.show();
         } else {
-            //saveOrder();
+            saveOrder();
             String fullOrder = order.toString();
 
             Intent intent = new Intent().setAction(Intent.ACTION_SEND);
+            Intent mainActivityIntent = new Intent(CompleteOrder.this, BrowseActivity.class);
             intent.putExtra(Intent.EXTRA_TEXT, fullOrder);
             intent.setType("text/plain");
             try {
                 intent.setPackage("com.whatsapp");
                 startActivity(intent);
+                startActivity(mainActivityIntent);
             } catch(Exception e){
                 intent.setPackage(null);
                 Toast toast = Toast.makeText(this, "Whatsapp not found. Defaulting to messenger.", 3);

@@ -219,6 +219,7 @@ public class BrowseActivity extends AppCompatActivity {
         Intent intent = new Intent(BrowseActivity.this, CompleteOrder.class);
         intent.putExtra("order", order);
         startActivity(intent);
+        order.laptopOrders.clear();
     }
 
     public void onClickDisplayOrders(View view){
