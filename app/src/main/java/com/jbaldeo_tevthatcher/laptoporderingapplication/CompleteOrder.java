@@ -17,7 +17,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CompleteOrder extends AppCompatActivity {
-    //private ArrayList<Laptop> currentCart;
     private Order order;
 
     @Override
@@ -63,8 +62,6 @@ public class CompleteOrder extends AppCompatActivity {
            pastOrders = new ArrayList<Order>();
        }
 
-       System.out.println(pastOrders);
-
        pastOrders.add(order);
 
         FileOutputStream fos = new FileOutputStream(f);
@@ -81,19 +78,20 @@ public class CompleteOrder extends AppCompatActivity {
             String fullOrder = order.toString();
 
             Intent intent = new Intent().setAction(Intent.ACTION_SEND);
-            Intent mainActivityIntent = new Intent(CompleteOrder.this, BrowseActivity.class);
             intent.putExtra(Intent.EXTRA_TEXT, fullOrder);
             intent.setType("text/plain");
             try {
                 intent.setPackage("com.whatsapp");
                 startActivity(intent);
-                startActivity(mainActivityIntent);
             } catch(Exception e){
                 intent.setPackage(null);
                 Toast toast = Toast.makeText(this, "Whatsapp not found. Defaulting to messenger.", 3);
                 toast.show();
                 startActivity(intent);
             }
+            fullOrder = "";
+            order.laptopOrders.clear();
+            displayCart(order);
         }
     }
 }

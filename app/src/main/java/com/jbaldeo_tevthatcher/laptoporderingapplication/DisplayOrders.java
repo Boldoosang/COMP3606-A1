@@ -23,16 +23,12 @@ public class DisplayOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_orders);
         try {
-            doThing();
+            getOrders();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void doThing() throws Exception{
-
-        getOrders();
-    }
 
     private void getOrders() throws Exception{
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.pastOrderLinearLayout);
@@ -56,6 +52,15 @@ public class DisplayOrders extends AppCompatActivity {
             TextView pastOrders = new TextView(this);
             pastOrders.setText(o.toString() + "\n");
             linearLayout.addView(pastOrders);
+
+            TextView total = new TextView(this);
+            total.setText("ORDER TOTAL: $" + o.calcTotalOrder() + "\n");
+            total.setTypeface(null, Typeface.BOLD);
+            total.setTextColor(Color.BLACK);
+            total.setGravity(Gravity.CENTER);
+            total.setTextSize(2,18);
+
+            linearLayout.addView(total);
         }
     }
 }

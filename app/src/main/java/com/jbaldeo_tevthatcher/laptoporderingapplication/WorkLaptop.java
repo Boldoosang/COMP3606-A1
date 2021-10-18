@@ -56,10 +56,10 @@ public class WorkLaptop extends Laptop{
 
     @Override
     public String toString(){
-        return "WORK LAPTOP\nProcessor: " + getProcessor() + "\nStorage: " + getStorage() + "\nOperating System: " + getOs() + "\nMemory: " + getRam() + "\n" + getCustomizationOptions() + getAdditionalOptions()+ "FINAL PRICE: $" + calculateFinalPrice()+ "\n\n";
+        return "WORK LAPTOP\nProcessor: " + getProcessor() + "\nStorage: " + getStorage() + "\nOperating System: " + getOs() + "\nMemory: " + getRam() + "\n" + getCustomizationOptions() + getAdditionalOptions()+ "FINAL PRICE: $" + getFinalPrice()+ "\n\n";
     }
 
-    public double calculateFinalPrice(){
+    public void calculateFinalPrice(){
         double touchscreenPrice = 0.00, webcamPrice = 0.00, FPSPrice = 0.00, RAMPrice = 0.00, warrantyPrice = 0.00, mousePrice = 0.00;
         if(getTouchScreen())
             touchscreenPrice = 500.00;
@@ -74,7 +74,7 @@ public class WorkLaptop extends Laptop{
         if(getWirelessMouse())
             mousePrice = 100.00;
 
-        return basePrice+ touchscreenPrice + webcamPrice + FPSPrice + RAMPrice + warrantyPrice + mousePrice;
+        setFinalPrice(basePrice+ touchscreenPrice + webcamPrice + FPSPrice + RAMPrice + warrantyPrice + mousePrice);
     }
 
 }

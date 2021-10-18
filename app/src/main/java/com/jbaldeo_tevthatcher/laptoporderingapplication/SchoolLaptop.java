@@ -40,7 +40,7 @@ public class SchoolLaptop extends Laptop{
         return "ADDITIONAL OPTIONS:\nExtended Warranty: " + wantExtendedWarranty + "\nWireless Mouse: " + wantWirelessMouse + "\n";
     }
 
-    public double calculateFinalPrice(){
+    public void calculateFinalPrice(){
         double touchscreenPrice = 0.00, webcamPrice = 0.00, RAMPrice = 0.00, warrantyPrice = 0.00, mousePrice = 0.00;
         if(getTouchScreen())
             touchscreenPrice = 500.00;
@@ -53,11 +53,11 @@ public class SchoolLaptop extends Laptop{
         if(getWirelessMouse())
             mousePrice = 100.00;
 
-        return basePrice+ touchscreenPrice + webcamPrice + RAMPrice + warrantyPrice + mousePrice;
+        setFinalPrice(basePrice+ touchscreenPrice + webcamPrice + RAMPrice + warrantyPrice + mousePrice);
     }
 
     @Override
     public String toString(){
-        return "SCHOOL LAPTOP\nProcessor: " + getProcessor() + "\nStorage: " + getStorage() + "\nOperating System: " + getOs() + "\nMemory: " + getRam() + "\n" + getCustomizationOptions() + getAdditionalOptions()+ "FINAL PRICE: $" + calculateFinalPrice()+ "\n\n";
+        return "SCHOOL LAPTOP\nProcessor: " + getProcessor() + "\nStorage: " + getStorage() + "\nOperating System: " + getOs() + "\nMemory: " + getRam() + "\n" + getCustomizationOptions() + getAdditionalOptions()+ "FINAL PRICE: $" + getFinalPrice()+ "\n\n";
     }
 }

@@ -59,10 +59,10 @@ public class GamingLaptop extends Laptop{
 
     @Override
     public String toString(){
-        return "GAMING LAPTOP\nProcessor: " + getProcessor() + "\nStorage: " + getStorage() + "\nOperating System: " + getOs() + "\nMemory: " + getRam() + "\n" + getCustomizationOptions() + getAdditionalOptions()+ "FINAL PRICE: $" + calculateFinalPrice()+ "\n\n";
+        return "GAMING LAPTOP\nProcessor: " + getProcessor() + "\nStorage: " + getStorage() + "\nOperating System: " + getOs() + "\nMemory: " + getRam() + "\n" + getCustomizationOptions() + getAdditionalOptions()+ "FINAL PRICE: $" + getFinalPrice()+ "\n\n";
     }
 
-    public double calculateFinalPrice(){
+    public void calculateFinalPrice(){
         double webcamPrice = 0.00, UHDPrice = 0.00, RAMPrice = 0.00, warrantyPrice = 0.00, mousePrice = 0.00, coolerPrice = 0.00;
         if(getWebcam())
             webcamPrice = 300.00;
@@ -77,6 +77,6 @@ public class GamingLaptop extends Laptop{
         if(getCoolingPad())
             coolerPrice = 200.00;
 
-        return basePrice+ webcamPrice + UHDPrice + RAMPrice + warrantyPrice + mousePrice + coolerPrice;
+        setFinalPrice(basePrice+ webcamPrice + UHDPrice + RAMPrice + warrantyPrice + mousePrice + coolerPrice);
     }
 }

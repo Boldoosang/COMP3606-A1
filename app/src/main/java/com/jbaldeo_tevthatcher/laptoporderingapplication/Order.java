@@ -32,6 +32,7 @@ public class Order implements Serializable {
         for(Laptop i: laptopOrders){
             orderString += i.toString();
         }
+        orderString += "\n ORDER TOTAL: " + calcTotalOrder();
         return orderString;
     }
 

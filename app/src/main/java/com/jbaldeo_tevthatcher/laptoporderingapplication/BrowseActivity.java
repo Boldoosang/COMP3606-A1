@@ -24,33 +24,22 @@ public class BrowseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
-        //currentCart = savedInstanceState.getStringArrayList("currentCart");
+
+        if(savedInstanceState != null){
+            currentCart = (ArrayList<Laptop>) savedInstanceState.getSerializable("currentCart");
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
     }
 
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
-        //savedInstanceState.putStringArrayList("currentCart", currentCart);
+        savedInstanceState.putSerializable("currentCart", currentCart);
     }
-
-//    protected void onPause(Bundle savedInstanceState) {
-//        super.onPause();
-//        savedInstanceState.putStringArrayList("currentCart", currentCart);
-//    }
-//
-//    protected void onResume(Bundle savedInstanceState) {
-//        super.onResume();
-//        currentCart = savedInstanceState.getStringArrayList("currentCart");
-//    }
-//
-//    protected void onStop(Bundle savedInstanceState) {
-//        super.onStop();
-//
-//    }
-//
-//    protected void onStart(Bundle savedInstanceState) {
-//        super.onStart();
-//
-//    }
 
     public void onClickAddToCartSchool(View view){
         SchoolLaptop schoolLaptop = new SchoolLaptop();
@@ -97,8 +86,9 @@ public class BrowseActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, "School Laptop added to cart.", 3);
         toast.show();
 
+        schoolLaptop.calculateFinalPrice();
+
         currentCart.add(schoolLaptop);
-        System.out.println(schoolLaptop.toString());
     }
 
 
@@ -153,7 +143,8 @@ public class BrowseActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, "Work Laptop added to cart.", 3);
         toast.show();
 
-        System.out.println(workLaptop.toString());
+        workLaptop.calculateFinalPrice();
+
         currentCart.add(workLaptop);
     }
 
@@ -209,8 +200,7 @@ public class BrowseActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(this, "Gaming Laptop added to cart.", 3);
         toast.show();
 
-        System.out.println(gamingLaptop.getRam());
-        System.out.println(gamingLaptop.toString());
+        gamingLaptop.calculateFinalPrice();
         currentCart.add(gamingLaptop);
     }
 
@@ -219,7 +209,6 @@ public class BrowseActivity extends AppCompatActivity {
         Intent intent = new Intent(BrowseActivity.this, CompleteOrder.class);
         intent.putExtra("order", order);
         startActivity(intent);
-        order.laptopOrders.clear();
     }
 
     public void onClickDisplayOrders(View view){
