@@ -71,11 +71,17 @@ public class CompleteOrder extends AppCompatActivity {
 
     public void onClickSendOrder(View view) throws Exception {
         if(order.isEmpty()){
-            Toast toast = Toast.makeText(this, "Unable to send order. Cart is empty.", 3);
+            Toast toast = Toast.makeText(this, "Unable to send order. Cart is empty.", Toast.LENGTH_SHORT);
             toast.show();
         } else {
             saveOrder();
             String fullOrder = order.toString();
+
+
+            order.laptopOrders.clear();
+            Intent toBrowse = new Intent(CompleteOrder.this, BrowseActivity.class);
+            toBrowse.putExtra("order", order);
+            startActivity(toBrowse);
 
             Intent intent = new Intent().setAction(Intent.ACTION_SEND);
             intent.putExtra(Intent.EXTRA_TEXT, fullOrder);
@@ -85,12 +91,10 @@ public class CompleteOrder extends AppCompatActivity {
                 startActivity(intent);
             } catch(Exception e){
                 intent.setPackage(null);
-                Toast toast = Toast.makeText(this, "Whatsapp not found. Defaulting to messenger.", 3);
+                Toast toast = Toast.makeText(this, "Whatsapp not found. Defaulting to messenger.", Toast.LENGTH_SHORT);
                 toast.show();
                 startActivity(intent);
             }
-            fullOrder = "";
-            order.laptopOrders.clear();
             displayCart(order);
         }
     }

@@ -6,15 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class BrowseActivity extends AppCompatActivity {
@@ -25,15 +21,19 @@ public class BrowseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
 
-        if(savedInstanceState != null){
+        if(savedInstanceState != null)
             currentCart = (ArrayList<Laptop>) savedInstanceState.getSerializable("currentCart");
+
+        Order processingOrder = (Order) getIntent().getSerializableExtra("order");
+
+        if(processingOrder != null){
+            currentCart = processingOrder.getLaptopOrders();
         }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-
     }
 
     public void onSaveInstanceState(Bundle savedInstanceState){
@@ -45,18 +45,12 @@ public class BrowseActivity extends AppCompatActivity {
         SchoolLaptop schoolLaptop = new SchoolLaptop();
 
         CheckBox touchScreenButton = (CheckBox)findViewById(R.id.schoolLaptop_TouchScreenCheckbox);
-        if(touchScreenButton.isChecked()){
-            schoolLaptop.setTouchScreen(true);
-        } else {
-            schoolLaptop.setTouchScreen(false);
-        }
+        schoolLaptop.setTouchScreen(touchScreenButton.isChecked());
+
 
         CheckBox webcamButton = (CheckBox)findViewById(R.id.schoolLaptop_WebcamCheckbox);
-        if(webcamButton.isChecked()){
-            schoolLaptop.setWebcam(true);
-        } else {
-            schoolLaptop.setWebcam(false);
-        }
+        schoolLaptop.setWebcam(webcamButton.isChecked());
+
 
         RadioGroup RAMConfig = (RadioGroup)findViewById(R.id.schoolRAMOptionsRadioGroup);
         RadioButton selectedRAMButton = (RadioButton)findViewById(RAMConfig.getCheckedRadioButtonId());
@@ -70,20 +64,14 @@ public class BrowseActivity extends AppCompatActivity {
         }
 
         Switch warrantySwitch = (Switch)findViewById(R.id.schoolLaptop_extWarranty);
-        if(warrantySwitch.isChecked()){
-            schoolLaptop.setWarranty(true);
-        } else {
-            schoolLaptop.setWarranty(false);
-        }
+        schoolLaptop.setWarranty(warrantySwitch.isChecked());
+
 
         Switch wirelessMouseSwitch = (Switch)findViewById(R.id.schoolLaptop_mouse);
-        if(wirelessMouseSwitch.isChecked()){
-            schoolLaptop.setWirelessMouse(true);
-        } else {
-            schoolLaptop.setWirelessMouse(false);
-        }
+        schoolLaptop.setWirelessMouse(wirelessMouseSwitch.isChecked());
 
-        Toast toast = Toast.makeText(this, "School Laptop added to cart.", 3);
+
+        Toast toast = Toast.makeText(this, "School Laptop added to cart.", Toast.LENGTH_SHORT);
         toast.show();
 
         schoolLaptop.calculateFinalPrice();
@@ -140,7 +128,7 @@ public class BrowseActivity extends AppCompatActivity {
             workLaptop.setWirelessMouse(false);
         }
 
-        Toast toast = Toast.makeText(this, "Work Laptop added to cart.", 3);
+        Toast toast = Toast.makeText(this, "Work Laptop added to cart.", Toast.LENGTH_SHORT);
         toast.show();
 
         workLaptop.calculateFinalPrice();
@@ -184,20 +172,13 @@ public class BrowseActivity extends AppCompatActivity {
         }
 
         Switch wirelessMouseSwitch = (Switch)findViewById(R.id.gamingLaptop_mouse);
-        if(wirelessMouseSwitch.isChecked()){
-            gamingLaptop.setWirelessMouse(true);
-        } else {
-            gamingLaptop.setWirelessMouse(false);
-        }
+        gamingLaptop.setWirelessMouse(wirelessMouseSwitch.isChecked());
 
         Switch coolingPadSwitch = (Switch)findViewById(R.id.gamingLaptop_coolingPad);
-        if(coolingPadSwitch.isChecked()){
-            gamingLaptop.setCoolingPad(true);
-        } else {
-            gamingLaptop.setCoolingPad(false);
-        }
+        gamingLaptop.setCoolingPad(coolingPadSwitch.isChecked());
 
-        Toast toast = Toast.makeText(this, "Gaming Laptop added to cart.", 3);
+
+        Toast toast = Toast.makeText(this, "Gaming Laptop added to cart.", Toast.LENGTH_SHORT);
         toast.show();
 
         gamingLaptop.calculateFinalPrice();
@@ -217,8 +198,12 @@ public class BrowseActivity extends AppCompatActivity {
     }
 
     public void onClickClearCart(View view){
-        currentCart.clear();
-        Toast toast = Toast.makeText(this, "Cart has been cleared.", 3);
+        clearCart();
+        Toast toast = Toast.makeText(this, "Cart has been cleared.", Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void clearCart(){
+        currentCart.clear();
     }
 }

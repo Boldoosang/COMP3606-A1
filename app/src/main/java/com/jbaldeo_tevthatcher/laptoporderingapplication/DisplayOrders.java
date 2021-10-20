@@ -38,6 +38,7 @@ public class DisplayOrders extends AppCompatActivity {
         ArrayList<Order> orders = (ArrayList<Order>) ois.readObject();
 
         String pastOrderString = "";
+        double cumulativeTotal = 0;
 
         for(Order o: orders){
             TextView label = new TextView(this);
@@ -53,14 +54,15 @@ public class DisplayOrders extends AppCompatActivity {
             pastOrders.setText(o.toString() + "\n");
             linearLayout.addView(pastOrders);
 
-            TextView total = new TextView(this);
-            total.setText("ORDER TOTAL: $" + o.calcTotalOrder() + "\n");
-            total.setTypeface(null, Typeface.BOLD);
-            total.setTextColor(Color.BLACK);
-            total.setGravity(Gravity.CENTER);
-            total.setTextSize(2,18);
-
-            linearLayout.addView(total);
+            cumulativeTotal += o.calcTotalOrder();
         }
+        TextView total = new TextView(this);
+        total.setText("ORDER TOTAL: $" + cumulativeTotal + "\n");
+        total.setTypeface(null, Typeface.BOLD);
+        total.setTextColor(Color.BLACK);
+        total.setGravity(Gravity.CENTER);
+        total.setTextSize(2,18);
+
+        linearLayout.addView(total);
     }
 }

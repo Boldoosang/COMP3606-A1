@@ -314,7 +314,7 @@
 
 
                 <TextView
-                    android:id="@+id/workLaptopSpecsTitle"
+                    android:id="@+id/gamingLaptopSpecsTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -449,7 +449,8 @@
                 android:onClick="onClickDisplayOrders"
                 android:text="Display Orders"
                 app:layout_constraintBottom_toTopOf="@id/clearCart_btn"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/completeOrder_btn"
