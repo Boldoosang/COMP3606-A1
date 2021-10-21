@@ -40,7 +40,7 @@ public class CompleteOrder extends AppCompatActivity {
     }
 
     private File getStorageFile(){
-        File f = new File (getApplicationContext().getFilesDir(), "order.txt");
+        File f = new File (getApplicationContext().getFilesDir(), "order.bin");
         try{
             f.createNewFile();
         } catch (Exception e){

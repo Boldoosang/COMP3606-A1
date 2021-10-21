@@ -67,16 +67,8 @@ public abstract class Laptop implements Serializable{
         return os;
     }
 
-    public void setBasePrice(double basePrice) {
-        this.basePrice = basePrice;
-    }
-
     public void setFinalPrice(double finalPrice) {
         this.finalPrice = finalPrice;
-    }
-
-    public double getBasePrice() {
-        return basePrice;
     }
 
     public double getFinalPrice() {

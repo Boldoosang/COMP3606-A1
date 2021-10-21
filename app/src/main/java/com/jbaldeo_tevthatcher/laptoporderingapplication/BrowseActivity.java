@@ -31,11 +31,6 @@ public class BrowseActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putSerializable("currentCart", currentCart);
@@ -84,25 +79,13 @@ public class BrowseActivity extends AppCompatActivity {
         WorkLaptop workLaptop = new WorkLaptop();
 
         CheckBox touchScreenButton = (CheckBox)findViewById(R.id.workLaptop_TouchScreenCheckbox);
-        if(touchScreenButton.isChecked()){
-            workLaptop.setTouchScreen(true);
-        } else {
-            workLaptop.setTouchScreen(false);
-        }
+        workLaptop.setTouchScreen(touchScreenButton.isChecked());
 
         CheckBox webcamButton = (CheckBox)findViewById(R.id.workLaptop_WebcamCheckbox);
-        if(webcamButton.isChecked()){
-            workLaptop.setWebcam(true);
-        } else {
-            workLaptop.setWebcam(false);
-        }
+        workLaptop.setWebcam(webcamButton.isChecked());
 
         CheckBox FingerprintScannerButton = (CheckBox)findViewById(R.id.workLaptop_FPSCheckbox);
-        if(FingerprintScannerButton.isChecked()){
-            workLaptop.setFingerprintScanner(true);
-        } else {
-            workLaptop.setFingerprintScanner(false);
-        }
+        workLaptop.setFingerprintScanner(FingerprintScannerButton.isChecked());
 
         RadioGroup RAMConfig = (RadioGroup)findViewById(R.id.workRAMOptionsRadioGroup);
         RadioButton selectedRAMButton = (RadioButton)findViewById(RAMConfig.getCheckedRadioButtonId());
@@ -115,18 +98,11 @@ public class BrowseActivity extends AppCompatActivity {
         }
 
         Switch warrantySwitch = (Switch)findViewById(R.id.workLaptop_extWarranty);
-        if(warrantySwitch.isChecked()){
-            workLaptop.setWarranty(true);
-        } else {
-            workLaptop.setWarranty(false);
-        }
+        workLaptop.setWarranty(warrantySwitch.isChecked());
 
         Switch wirelessMouseSwitch = (Switch)findViewById(R.id.workLaptop_mouse);
-        if(wirelessMouseSwitch.isChecked()){
-            workLaptop.setWirelessMouse(true);
-        } else {
-            workLaptop.setWirelessMouse(false);
-        }
+        workLaptop.setWirelessMouse(wirelessMouseSwitch.isChecked());
+
 
         Toast toast = Toast.makeText(this, "Work Laptop added to cart.", Toast.LENGTH_SHORT);
         toast.show();
@@ -141,18 +117,10 @@ public class BrowseActivity extends AppCompatActivity {
         GamingLaptop gamingLaptop = new GamingLaptop();
 
         CheckBox webcamButton = (CheckBox)findViewById(R.id.gamingLaptop_WebcamCheckbox);
-        if(webcamButton.isChecked()){
-            gamingLaptop.setWebcam(true);
-        } else {
-            gamingLaptop.setWebcam(false);
-        }
+        gamingLaptop.setWebcam(webcamButton.isChecked());
 
         CheckBox UHDButton = (CheckBox)findViewById(R.id.gamingLaptop_4KCheckbox);
-        if(UHDButton.isChecked()){
-            gamingLaptop.setUHDDisplay(true);
-        } else {
-            gamingLaptop.setUHDDisplay(false);
-        }
+        gamingLaptop.setUHDDisplay(UHDButton.isChecked());
 
         RadioGroup RAMConfig = (RadioGroup)findViewById(R.id.gamingRAMOptionsRadioGroup);
         RadioButton selectedRAMButton = (RadioButton)findViewById(RAMConfig.getCheckedRadioButtonId());
@@ -165,11 +133,8 @@ public class BrowseActivity extends AppCompatActivity {
         }
 
         Switch warrantySwitch = (Switch)findViewById(R.id.gamingLaptop_extWarranty);
-        if(warrantySwitch.isChecked()){
-            gamingLaptop.setWarranty(true);
-        } else {
-            gamingLaptop.setWarranty(false);
-        }
+        gamingLaptop.setWarranty(warrantySwitch.isChecked());
+
 
         Switch wirelessMouseSwitch = (Switch)findViewById(R.id.gamingLaptop_mouse);
         gamingLaptop.setWirelessMouse(wirelessMouseSwitch.isChecked());

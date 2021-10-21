@@ -32,7 +32,7 @@ public class DisplayOrders extends AppCompatActivity {
 
     private void getOrders() throws Exception{
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.pastOrderLinearLayout);
-        File f = new File (getApplicationContext().getFilesDir(), "order.txt");
+        File f = new File (getApplicationContext().getFilesDir(), "order.bin");
         FileInputStream fis = new FileInputStream(f);
         ObjectInputStream ois = new ObjectInputStream(fis);
         ArrayList<Order> orders = (ArrayList<Order>) ois.readObject();
@@ -57,7 +57,7 @@ public class DisplayOrders extends AppCompatActivity {
             cumulativeTotal += o.calcTotalOrder();
         }
         TextView total = new TextView(this);
-        total.setText("ORDER TOTAL: $" + cumulativeTotal + "\n");
+        total.setText("GRAND TOTAL: $" + cumulativeTotal + "\n");
         total.setTypeface(null, Typeface.BOLD);
         total.setTextColor(Color.BLACK);
         total.setGravity(Gravity.CENTER);

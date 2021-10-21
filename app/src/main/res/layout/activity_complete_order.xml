@@ -47,7 +47,7 @@
                 android:id="@+id/currentOrderDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Remove, current order."
+                android:text="Current order."
                 android:textColor="@color/black" />
         </LinearLayout>
     </ScrollView>

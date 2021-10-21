@@ -15,10 +15,6 @@ public class Order implements Serializable {
         return laptopOrders;
     }
 
-    public void setLaptopOrders(ArrayList<Laptop> laptopOrders) {
-        this.laptopOrders = laptopOrders;
-    }
-
     public double calcTotalOrder(){
         double totalOrder = 0;
         for(Laptop i: laptopOrders){
