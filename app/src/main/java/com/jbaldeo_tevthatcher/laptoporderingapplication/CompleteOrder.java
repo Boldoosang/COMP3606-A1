@@ -28,6 +28,32 @@ public class CompleteOrder extends AppCompatActivity {
         displayCart(order);
     }
 
+    /*
+     * The life cycle methods, such as onStart, onPause, onResume, onStop and onRestart, did not require modification as the
+     * only major information to be retained would be the state of the cart. Once the app is rebuilt via the onCreate,
+     * the screen would be constructed using the state of the cart derived from the intent. Hence, the state of the screen,
+     * as well as the information on the screen would be retained when rotating, answering a call, and switching between tasks.
+     * */
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+    }
+
     public void displayCart(Order order){
         TextView orderDetails = (TextView)findViewById(R.id.currentOrderDetails);
 

@@ -31,9 +31,36 @@ public class BrowseActivity extends AppCompatActivity {
         }
     }
 
+    /*
+     * The life cycle methods, such as onStart, onPause, onResume, onStop and onRestart, did not require modification as the
+     * only major information to be retained would be the state of the cart. This state of the cart is stored using the onSaveInstanceState
+     * method, which would store the current state of the cart in the savedInstanceBundle. When the application is rebuilt via the onCreate
+     * method, the saved state of the cart would be restored to the main data structure for storing the cart. Hence, the state of the screen,
+     * as well as the information on the screen would be retained when rotating, answering a call, and switching between tasks.
+    * */
+
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putSerializable("currentCart", currentCart);
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
     }
 
     public void onClickAddToCartSchool(View view){

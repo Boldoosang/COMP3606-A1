@@ -18,26 +18,60 @@ import java.util.ArrayList;
 
 public class DisplayOrders extends AppCompatActivity {
 
+    ArrayList<Order> orders;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_orders);
         try {
-            getOrders();
+            orders = getOrders();
+            displayOrders(orders);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /*
+     * The life cycle methods, such as onStart, onPause, onResume, onStop and onRestart, did not require any modification
+     * as the application would have only changed state when interacting with the user. Furthermore, once this state was derived
+     * it would remain static. Additionally, when the app is created or rebuilt via the onCreate method, it retrieves information
+     * from the file which would then be used to display the order to the screen. Hence, it does not require the refinement of any lifecycle
+     * methods as the state of the screen, as well as the information on the screen, would be retained when rotating, answering a call
+     * and switching between tasks.
+     * */
 
-    private void getOrders() throws Exception{
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.pastOrderLinearLayout);
+    @Override
+    protected void onStart(){
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+    }
+
+    private ArrayList<Order> getOrders() throws Exception{
+
         File f = new File (getApplicationContext().getFilesDir(), "order.bin");
         FileInputStream fis = new FileInputStream(f);
         ObjectInputStream ois = new ObjectInputStream(fis);
         ArrayList<Order> orders = (ArrayList<Order>) ois.readObject();
 
-        String pastOrderString = "";
+        return orders;
+    }
+
+    private void displayOrders(ArrayList<Order> orders){
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.pastOrderLinearLayout);
         double cumulativeTotal = 0;
 
         for(Order o: orders){

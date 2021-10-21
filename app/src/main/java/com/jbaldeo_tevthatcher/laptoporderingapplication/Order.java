@@ -8,7 +8,7 @@ public class Order implements Serializable {
 
     public Order(ArrayList<Laptop> currentCart) {
         laptopOrders = new ArrayList<Laptop>();
-        laptopOrders=currentCart;
+        laptopOrders = currentCart;
     }
 
     public ArrayList<Laptop> getLaptopOrders() {
