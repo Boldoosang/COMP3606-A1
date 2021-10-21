@@ -86,6 +86,7 @@ public class DisplayOrders extends AppCompatActivity {
 
             TextView pastOrders = new TextView(this);
             pastOrders.setText(o.toString() + "\n");
+            pastOrders.setTextColor(Color.BLACK);
             linearLayout.addView(pastOrders);
 
             cumulativeTotal += o.calcTotalOrder();
